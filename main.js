@@ -21,7 +21,7 @@ function submission(event) {
 function postdata(accdata) {
   axios
     .post(
-      "https://crudcrud.com/api/84cfdec200434d83b0ecb83e0266b9b6/Pratik",
+      "https://crudcrud.com/api/383888572fa546f7b79353f3e528af00/Pratik",
       accdata
     )
     .then((response) => {
@@ -35,7 +35,7 @@ function postdata(accdata) {
 function getdata(disdata) {
   axios
     .get(
-      `https://crudcrud.com/api/84cfdec200434d83b0ecb83e0266b9b6/Pratik/${disdata._id}`
+      `https://crudcrud.com/api/383888572fa546f7b79353f3e528af00/Pratik/${disdata._id}`
     )
     .then((response) => {
       const mainlist = document.getElementById("list");
@@ -54,15 +54,15 @@ function getdata(disdata) {
       buy3.textContent = "BUY THREE";
 
       // newli.textContent = JSON.stringify(response.data);
-      newli.textContent = `Name: ${response.data.name}, Description: ${response.data.des}, Price: ${response.data.pri}, Quantity: ${response.data.qty}`
+      newli.textContent = `Name: ${response.data.name}, Description: ${response.data.des}, Price: ${response.data.pri}, Quantity: ${response.data.qty}`;
       newli.appendChild(buy1);
       newli.appendChild(buy2);
       newli.appendChild(buy3);
       mainlist.appendChild(newli);
 
-      buy1.addEventListener("click",  (event) =>
+      buy1.addEventListener("click", (event) =>
         update1(event, response.data, 1)
-    );
+      );
       buy2.addEventListener("click", (event) =>
         update1(event, response.data, 2)
       );
@@ -87,7 +87,7 @@ function update1(event, accdata, n) {
   const { _id, ...data } = accdata;
   axios
     .put(
-      `https://crudcrud.com/api/84cfdec200434d83b0ecb83e0266b9b6/Pratik/${id}`,
+      `https://crudcrud.com/api/383888572fa546f7b79353f3e528af00/Pratik/${id}`,
       data
     )
     .then((response) => {
@@ -102,7 +102,7 @@ refresh();
 function refresh() {
   window.addEventListener("DOMContentLoaded", () => {
     axios
-      .get("https://crudcrud.com/api/84cfdec200434d83b0ecb83e0266b9b6/Pratik")
+      .get("https://crudcrud.com/api/383888572fa546f7b79353f3e528af00/Pratik")
       .then((response) => {
         response.data.forEach((element) => {
           getdata(element);
